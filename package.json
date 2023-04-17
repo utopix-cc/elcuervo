@@ -1,0 +1,15 @@
+{
+  "main": "index.html",
+  "name": "El-cuervo",
+  "description": "Poema El cuervo de Edgar Allan Poe",
+  "version": "0.1.0",
+  "keywords": [ "El cuervo", "poe" ],
+  "window": {
+    "title": "El cuervo",
+    "icon": "iconmini.png",
+    "toolbar": false
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

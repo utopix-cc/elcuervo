@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>El Cuervo - Edgar Allan Poe</title>
+	<link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- required files for booklet -->
+    <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+
+    <script src="booklet/jquery.booklet.latest.js" type="text/javascript"></script>
+    <link href="booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="skin/mediaelementplayer.css" />
+    <link rel="stylesheet" href="css/avant-garde/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/modal.css" />
+    <link href="css/menu.css" rel="stylesheet">
+    <script src="js/mediaelement-and-player.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+	<script type="text/javascript">
+		function contentAutoSize(){
+   			$("#content").height($(window).height());
+		}
+		 // call on first load
+		$(document).ready( function () {
+  			contentAutoSize();
+		});
+		$(window).resize(contentAutoSize); // call on browser resize
+	    $(function () {
+	        $("#mybook").booklet({
+				width:"100%",
+    			height: "95%",
+				closed: true,
+				autoCenter: true,
+				covers: true,
+				pageNumbers: false,
+        		play: '#play',
+        		pause: '#pause',
+                /*arrows: true,*/
+                delay: 15000,
+                hash: true,
+               next: '#custom-next',
+                prev: '#custom-prev',
+                overlays: false,
+                manual: false
+
+			});
+	    });
+    </script>
+    <script type="text/javascript" src="js/jquery.responsivetext.js"></script>
+    <script type="text/javascript">
+		$(document).ready( function () {
+  			fontAutoSize();
+		});
+		function fontAutoSize(){
+   			$("body").responsiveText({
+    			breakPoint: '200'
+			});
+		}
+		$("body").responsiveText({
+    		breakPoint: '200'
+		});
+	</script>
+
+    <script src="js/dialogs.js" type="text/javascript"></script>
+    <script> $("body").responsiveText(); </script>
+</head>
+<body>
+
+<!-- menu -->
+
+    <nav>
+        <ul>
+            <li class="responsive-text"><span>Navegación:</span></li>
+             <li class="responsive-text"></li>
+            <li class="responsive-text"><a href="#/page/2" id="inicio"><i class="fa fa-step-backward"></i> Portada</a></li>
+            <li class="responsive-text"><a href="#/page/52" id="fin"><i class="fa fa-step-forward"></i> Contraportada</a></li>
+            <li class="responsive-text"><span>Audio:</span></li>
+            <li class="responsive-text"><audio id="yourAudio" preload='none'> <source src="media/GhostStory.ogg" loop /> </audio> <a href="#" id="audioControl"><i class="fa fa-play"></i> Reproducir</a></li>
+            <script>
+                var yourAudio = document.getElementById('yourAudio'),
+    ctrl = document.getElementById('audioControl');
+
+ctrl.onclick = function () {
+
+    // Update the Button
+    var pause = ctrl.innerHTML === '<i class="fa fa-pause"></i> Pausar';
+    ctrl.innerHTML = pause ? '<i class="fa fa-play"></i> Reproducir' : '<i class="fa fa-pause"></i> Pausar';
+
+    // Update the Audio
+    var method = pause ? 'pause' : 'play';
+    yourAudio[method]();
+
+    // Prevent Default Action
+    return false;
+};
+            </script>
+
+        </ul>
+    </nav>
+
+    <article>
+        <script>
+
+        // Wait for the page to load first
+        window.onload = function() {
+
+          //Get a reference to the link on the page
+          // with an id of "mylink"
+          var a = document.getElementById("custom-prev");
+          var b = document.getElementById("custom-next");
+          var c = document.getElementById("inicio");
+          var d = document.getElementById("fin");
+          //Set code to run when the link is clicked
+          // by assigning a function to "onclick"
+          a.onclick = function() {
+
+            for(i=1; i<=18; i++){
+            $('#audioplayer'+[i]+'').each(function(){this.player.pause()})
+
+            }
+            return false;
+          }
+          b.onclick = function() {
+
+            for(i=1; i<=18; i++){
+            $('#audioplayer'+[i]+'').each(function(){this.player.pause()})
+
+            }
+            return false;
+          }
+           c.onclick = function() {
+
+            for(i=1; i<=18; i++){
+            $('#audioplayer'+[i]+'').each(function(){this.player.pause()})
+
+            }
+
+          }
+          d.onclick = function() {
+
+            for(i=1; i<=18; i++){
+            $('#audioplayer'+[i]+'').each(function(){this.player.pause()})
+
+            }
+
+          }
+
+        }
+    </script>
+        <div class="anterior"><a href="javascript:;" id="custom-prev" ><i class="fa fa-arrow-left"></i></a></div>
+        <div class="siguiente"><a href="javascript:;" id="custom-next" ><i class="fa fa-arrow-right"></i></a></div>
+
+	<div id="content">
+
+	    <div id="mybook">
+
+	        <div title="Portada">
+	           <div class="embed-container">
+				    <iframe src="portada.html" frameBorder="0"></iframe>
+                </div>
+	        </div >
+	        <div title="Guarda">
+				<div class="foto">
+	           		<a href="http://www.elperroylarana.gob.ve"  target="_blank"><img src="images/logotipo.png" alt="" class="center"/></a>
+                </div>
+	        </div>
+            <div>
+                <div class="content">
+                	<div class="text">
+						<p class="responsive-text">
+                			<b>Instrucciones</b><br/>
+                            <br/>
+                			1. Para pasar cada página haz clic sobre las flechas de navegación.<br/>
+                			2. Para activar una interacción haz clic sobre los elementos, el puntero cambiará para indicar que hay una interacción.<br/>
+                			3. Desplazando el puntero hacia la izquierda, podrás desplegar el menú, que permite opciones de navegación y audio.<br/>
+                            4. En cada página podrás reproducir el audio de la narración del cuervo haciendo clic sobre el reproductor que se encuentra debajo del texto.<br/>
+                            5. Cuando reproduces la narración se bloquearán las flechas de navegación, para activarlas debes detener el audio.<br/>
+                            6. En algunos versos, verás unas palabras en rojo, si haces clic sobre estas se desplegará el glosario.<br/>
+                        </p>
+                     </div>
+
+                </div>
+
+            </div>
+            <div>
+                <div class="foto">
+	           		<a href="javascript:;" class="md-trigger" data-modal="modal-1"><img src="images/Poe.png" alt=""/></a>
+                </div>
+
+	        </div>
+            <div>
+                <div class="foto">
+	           		<a href="javascript:;" class="md-trigger" data-modal="modal-2"><img src="images/Dore.png" alt=""/></a>
+                </div>
+
+	        </div>
+	        <div>
+            	<div class="foto">
+	           		<a href="javascript:;" class="md-trigger" data-modal="modal-3"><img src="images/Bonalde.png" alt=""/></a>
+                </div>
+	        </div>
+	        <div>
+
+                    <div class="content">
+                	<div class="text">
+                        <p class="responsive-text">
+                			<b>Presentación</b><br/>
+                            <br/>
+                			Desde el momento de su aparición en 1845  El cuervo se propagó casi de inmediato por los Estados Unidos y Europa. La atmósfera del poema buscaba, más que conmover al lector, era que esas emociones que se desprendían del poema no quedarán separadas del texto como algo circunstancial, sino que fuera el resultado del vislumbramiento de la locura que cada lector posee en sí. Peligrosa incursión en la que Edgar Allan Poe (1809-1849) dedicó toda la vida: sabemos que lo logró. El atisbo de esa locura también se ve en las ilustraciones que a través del tiempo se han realizado para el poema: el ilustrador de Alicia en el País de las maravillas John Tenniel realiza una versión del cuervo en 1858, Édouard Manet ilustra la traducción de Stephane Mallarmé en 1875, Gustavo Doré realiza su versión ilustrada en 1884 (es la que utilizamos para la presente edición), y otros  artistas tan originales en su expresión como los ya mencionados. La traducción del venezolano Antonio Pérez Bonalde es una de las más reconocidas por ser la que más se acerca a la métrica inglesa y hasta el día de hoy sigue vigente. La Fundación Editorial El perro y la rana ofrece esta obra a nuestros lectores y lectoras en un nuevo formato que estamos ensayando y deseamos acercarlo a los nuevos dispositivos de lectura. Es posible que desde allí puedan sentir el graznido del “nunca más”.
+                        </p>
+
+                     </div>
+
+                </div>
+	        </div>
+	        <div>
+	            <div class="embed-container">
+					<iframe src="pagina6.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+	        <div>
+	            <div class="embed-container">
+					<iframe src="pagina7.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+
+					<div class="info">
+                    <div class="narracion">
+                        <audio id="audioplayer1" width="640" height="30" src="media/narracion/1.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	9
+                        </p>
+                    </div>
+                    </div>
+                <div class="content">
+                    <div class="text" id="text1">
+						<p class="responsive-text">
+                        Una <a href="javascript:;" class="md-trigger" data-modal="modal-4">fosca</a> medianoche, cuando en tristes reflexiones,<br/>
+						sobre más de un raro infolio de olvidados <a href="javascript:;" class="md-trigger" data-modal="modal-5">cronicones</a><br/>
+						inclinaba soñoliento la cabeza, de repente<br/>
+						a mi puerta oí llamar,<br/>
+						como si alguien, suavemente, se pusiese con incierta<br/>
+						mano tímida a tocar:<br/>
+						“¡Es —me dije— una visita que llamando está a mi puerta:<br/>
+						eso es todo y nada más!”<br/>
+                        </p>
+                    </div>
+                   </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+                	<iframe src="pagina11.html" frameBorder="0"></iframe>
+
+                </div>
+	        </div>
+            <div>
+
+                    <div class="info">
+                    <div class="narracion">
+                        <audio id="audioplayer2" width="640" height="30" src="media/narracion/2.ogg" controls></audio>
+                    </div>
+					<div class="npag">
+                    	<p class="responsive-text">
+                        	11
+                        </p>
+                    </div>
+                    </div>
+                	<div class="content">
+                    <div class="text" id="text2">
+						<p class="responsive-text">
+                        ¡Ah! Bien claro lo recuerdo: era el crudo mes del hielo,<br/>
+                        y su espectro cada brasa moribunda enviaba al suelo.<br/>
+                        Cuán ansioso el nuevo día deseaba, en la lectura<br/>
+                        procurando en vano hallar<br/>
+                        tregua a la honda desventura de la muerta Leonora;<br/>
+                        la radiante, la sin par<br/>
+                        virgen rara a quien Leonora los querubes llaman, ahora<br/>
+                        ya sin nombre... ¡nunca más!
+                        </p>
+                    </div>
+                    </div>
+
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina8.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+	           <div class="info">
+                <div class="narracion">
+                        <audio id="audioplayer3" width="640" height="30" src="media/narracion/3.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	13
+                        </p>
+                    </div>
+                </div>
+                <div class="content">
+					<div class="text" id="text3">
+						<p class="responsive-text">
+                        Y el crujido triste, incierto, de las rojas colgaduras<br/>
+                        me aterraba, me llenaba de fantásticas <a href="javascript:;" class="md-trigger" data-modal="modal-6">pavuras</a>,<br/>
+                        de tal modo que el latido de mi pecho palpitante<br/>
+                        procurando dominar,<br/>
+                        “¡Es, sin duda, un visitante —repetía con instancia—<br/>
+                        que a mi alcoba quiere entrar:<br/>
+                        un tardío visitante a las puertas de mi estancia...,<br/>
+                        eso es todo, y nada más!”
+                        </p>
+                    </div>
+                   </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina12.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+	            <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer4" width="640" height="30" src="media/narracion/4.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	15
+                        </p>
+                    </div>
+                </div>
+                <div class="content">
+               		<div class="text" id="text4">
+						<p class="responsive-text">
+                            Poco a poco, fuerza y bríos fue mi espíritu cobrando:<br/>
+                            “Caballero —dije— o dama: mil perdones os demando;<br/>
+                            mas, el caso es que dormía, y con tanta gentileza<br/>
+                            me vinisteis a llamar,<br/>
+                            y con tal delicadeza y tan tímida constancia<br/>
+                            os pusísteis a tocar,<br/>
+                            que no oí” —dije— y las puertas abrí al punto de mi estancia:<br/>
+                            ¡sombras sólo y... nada más!
+                        </p>
+                    </div>
+                </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina15.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+	            <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer5" width="640" height="30" src="media/narracion/5.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	17
+                        </p>
+                    </div>
+                </div>
+                <div class="content">
+					<div class="text" id="text5">
+						<p class="responsive-text">
+						Mudo, trémulo, en la sombra por mirar haciendo empeños,<br/>
+						quedé allí, cual antes nadie los soñó, forjando sueños;<br/>
+						más profundo era el silencio, y la calma no acusaba<br/>
+						ruido alguno..., resonar<br/>
+						sólo un nombre se escuchaba que en voz baja a aquella hora<br/>
+						yo me puse a murmurar,<br/>
+						y que el eco repetía como un soplo: ¡Leonora...!<br/>
+						esto apenas, ¡nada más!
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina16.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer6" width="640" height="30" src="media/narracion/6.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	19
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text6">
+						<p class="responsive-text">
+						A mi alcoba retornando con el alma en turbulencia,<br/>
+						pronto oí llamar de nuevo, esta vez con más violencia.<br/>
+						“De seguro —dije— es algo que se posa en mi persiana,<br/>
+						pues, veamos de encontrar<br/>
+						la razón abierta y llana de este caso raro y serio,<br/>
+						y el enigma averiguar.<br/>
+						¡Corazón! Calma un instante, y aclaremos el misterio...<br/>
+						—Es el viento— y nada más!”
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina19.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                 <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer7" width="640" height="30" src="media/narracion/7.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	21
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text7">
+						<p class="responsive-text">
+						La ventana abrí, y con rítmico aleteo y garbo extraño,<br/>
+						entró un cuervo majestuoso de la sacra edad de antaño.<br/>
+						Sin pararse ni un instante ni señales dar de susto,<br/>
+						con aspecto señorial,<br/>
+						fue a posarse sobre un busto de Minerva que ornamenta<br/>
+						de mi puerta el cabezal;<br/>
+						sobre el busto que de Palas la figura representa<br/>
+						fue y posose —¡y nada más!
+                        </p>
+                    </div>
+                </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+                    <iframe src="pagina20.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                <div class="narracion">
+                        <audio id="audioplayer8" width="640" height="30" src="media/narracion/8.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	23
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text8">
+						<p class="responsive-text">
+						<a href="javascript:;" class="md-trigger" data-modal="modal-7">Trocó</a> entonces el negro pájaro en sonrisas mi tristeza<br/>
+						con su grave, <a href="javascript:;" class="md-trigger" data-modal="modal-8">torva</a> y seria, decorosa gentileza;<br/>
+						y le dije: “Aunque la cresta calva llevas, de seguro<br/>
+						no eres cuervo nocturnal,<br/>
+						viejo, infausto cuervo obscuro, vagabundo en la tiniebla...<br/>
+						Dime: ¿Cuál tu nombre, cuál<br/>
+						en el reino <a href="javascript:;" class="md-trigger" data-modal="modal-9">plutoniano</a> de la noche y de la niebla?...”<br/>
+						Dijo el cuervo: “¡Nunca más!”
+                        </p>
+                    </div>
+                     </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina23.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer9" width="640" height="30" src="media/narracion/9.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	25
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text9">
+						<p class="responsive-text">
+						Asombrado quedé oyendo así hablar al avechucho,<br/>
+						si bien su árida respuesta no expresaba poco o mucho;<br/>
+						pues preciso es convengamos en que nunca hubo criatura<br/>
+						que lograse contemplar<br/>
+						ave alguna en la moldura de su puerta encaramada,<br/>
+						ave o bruto reposar<br/>
+						sobre efigie en la <a href="javascript:;" class="md-trigger" data-modal="modal-10">cornisa</a> de su puerta cincelada,<br/>
+						con tal nombre: “¡Nunca más!”
+                        </p>
+                    </div>
+                </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+                    <iframe src="pagina24.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                  <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer10" width="640" height="30" src="media/narracion/10.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	27
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text10">
+						<p class="responsive-text">
+						Mas el cuervo, fijo, inmóvil, en la grave efigie aquella,<br/>
+						sólo dijo esa palabra, cual si su alma fuese en ella<br/>
+						vinculada —ni una pluma sacudía, ni un acento<br/>
+						se le oía pronunciar...<br/>
+						Dije entonces al momento: “Ya otros antes se han marchado,<br/>
+						y la aurora al despuntar,<br/>
+						él también se irá volando cual mis sueños han volado.”<br/>
+						Dijo el cuervo: “¡Nunca más!”
+                        </p>
+                    </div>
+                </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina27.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer11" width="640" height="30" src="media/narracion/11.ogg" controls></audio>
+                    </div>
+					<div class="npag">
+                    	<p class="responsive-text">
+                        	29
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text11">
+						<p class="responsive-text">
+						Por respuesta tan abrupta como justa sorprendido,<br/>
+						“No hay ya duda alguna —dije— lo que dice es aprendido;<br/>
+						aprendido de algún amo desdichado a quien la suerte<br/>
+						persiguiera sin cesar,<br/>
+						persiguiera hasta la muerte, hasta el punto de, en su duelo,<br/>
+						sus canciones terminar<br/>
+						y el clamor de su esperanza con el triste <a href="javascript:;" class="md-trigger" data-modal="modal-11">ritornelo</a><br/>
+						de jamás, ¡y nunca más!”
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+                    <iframe src="pagina28.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer12" width="640" height="30" src="media/narracion/12.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	31
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text12">
+						<p class="responsive-text">
+						Mas el cuervo provocando mi alma triste a la sonrisa,<br/>
+						mi sillón rodé hasta el frente de ave, y busto, y de cornisa;<br/>
+						luego, hundiéndome en la seda, fantasía y fantasía<br/>
+						dime entonces a juntar,<br/>
+						por saber qué pretendía aquel pájaro <a href="javascript:;" class="md-trigger" data-modal="modal-12">ominoso</a><br/>
+						de un pasado inmemorial,<br/>
+						aquel <a href="javascript:;" class="md-trigger" data-modal="modal-13">hosco</a>, torvo, infausto, cuervo lúgubre y odioso<br/>
+						al graznar: “¡Nunca jamás!”
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina31.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer13" width="640" height="30" src="media/narracion/13.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	33
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text13">
+						<p class="responsive-text">
+						Quedé aquesto investigando frente al cuervo, en honda calma,<br/>
+						cuyos ojos encendidos me abrasaban pecho y alma.<br/>
+						Esto y más —sobre cojines reclinado— con anhelo<br/>
+						me empeñaba en descifrar,<br/>
+						sobre el rojo terciopelo do imprimía viva huella<br/>
+						luminosa mi <a href="javascript:;" class="md-trigger" data-modal="modal-14">fanal</a>,<br/>
+						terciopelo cuya púrpura ¡ay! Jamás volverá ella<br/>
+						a oprimir ¡ah! ¡Nunca más!
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+
+                    <iframe src="pagina32.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+             <div>
+                  <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer14" width="640" height="30" src="media/narracion/14.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	35
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text14">
+						<p class="responsive-text">
+                            Pareciome el aire, entonces, por incógnito <a href="javascript:;" class="md-trigger" data-modal="modal-15">incensario</a><br/>
+                            que un querube columpiase de mi alcoba en el santuario,<br/>
+                            perfumado. “Miserable ser —me dije— Dios te ha oído,<br/>
+                            y por medio angelical,<br/>
+                            tregua, tregua y el olvido del recuerdo de Leonora<br/>
+                            te ha venido hoy a brindar:<br/>
+                            ¡Bebe! Bebe ese <a href="javascript:;" class="md-trigger" data-modal="modal-16">nepente</a>, y así todo olvida ahora.”<br/>
+                            Dijo el cuervo: “¡Nunca más!”
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina35.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer15" width="640" height="30" src="media/narracion/15.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	37
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text15">
+						<p class="responsive-text">
+                        “¡Oh, profeta —dije— o duende!, mas profeta al fin, ya seas<br/>
+                        ave o diablo, ya te envía la tormenta, ya te veas<br/>
+                        por los <a href="javascript:;" class="md-trigger" data-modal="modal-17">ábregos</a> barrido a esta playa, desolado<br/>
+                        pero intrépido, a este hogar<br/>
+                        por los males devastado, dime, dime, te lo imploro:<br/>
+                        ¿llegaré jamás a hallar<br/>
+                        algún bálsamo o consuelo para el mal que triste lloro?”<br/>
+                        Dijo el cuervo: “¡Nunca más!”
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+                    <iframe src="pagina36.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+             <div>
+                 <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer16" width="640" height="30" src="media/narracion/16.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	39
+                        </p>
+                    </div>
+                </div>
+	             <div class="content">
+					<div class="text" id="text16">
+						<p class="responsive-text">
+                        “¡Oh, profeta —dije— o diablo! Por ese ancho <a href="javascript:;" class="md-trigger" data-modal="modal-18">combo</a> velo<br/>
+                        de zafir que nos cobija, por el mismo Dios del Cielo<br/>
+                        a quien ambos adoramos, dile a esta alma adolorida,<br/>
+                        presa infausta del pesar,<br/>
+                        si jamás en otra vida la doncella arrobadora<br/>
+                        a mi seno he de estrechar,<br/>
+                        la alma virgen a quien llaman los arcángeles Leonora!”<br/>
+                        Dijo el cuervo: “¡Nunca más!”
+                        </p>
+                    </div>
+                     </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina39.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer17" width="640" height="30" src="media/narracion/17.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	41
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text17">
+						<p class="responsive-text">
+                        “Esa voz, oh cuervo, sea la señal de la partida<br/>
+                        —grité alzándome—: ¡retorna, vuelve a tu hórrida guarida,<br/>
+                        la plutónica ribera de la noche y de la bruma!...<br/>
+                        ¡De tu horrenda falsedad<br/>
+                        en memoria, ni una pluma dejes, negra! ¡El busto deja!<br/>
+                        ¡Deja en paz mi soledad!<br/>
+                        ¡Quita el pico de mi pecho! ¡De mi umbral tu forma aleja!...”<br/>
+                        Dijo el cuervo: “¡Nunca más!”
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina40.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+                 <div class="info">
+                     <div class="narracion">
+                        <audio id="audioplayer18" width="640" height="30" src="media/narracion/18.ogg" controls></audio>
+                    </div>
+                    <div class="npag">
+                    	<p class="responsive-text">
+                        	43
+                        </p>
+                    </div>
+                </div>
+	            <div class="content">
+					<div class="text" id="text18">
+						<p class="responsive-text">
+                            Y aún el cuervo inmóvil, fijo, sigue fijo en la escultura,<br/>
+                            sobre el busto que ornamenta de mi puerta la moldura....<br/>
+                            y sus ojos son los ojos de un demonio que, durmiendo,<br/>
+                            las visiones ve del mal;<br/>
+                            y la luz sobre él cayendo, sobre el suelo arroja trunca<br/>
+                            su ancha sombra funeral,<br/>
+                            y mi alma de esa sombra que en el suelo flota... ¡nunca<br/>
+                            se alzará..., nunca jamás!
+                        </p>
+                    </div>
+                    </div>
+
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina43.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<iframe src="pagina44.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+            <div>
+	            <div class="embed-container">
+					<div class="textcreditos">
+						<p class="responsive-text">
+                        &copy;Fundación Editorial El <b>perro</b> y la <b>rana</b>, 2014</br>
+                        </br>
+                        Centro Simón Bolívar, Torre norte , piso 21, El Silencio</br>
+                        Caracas-Venezuela, 1010.</br>
+                        Teléfonos: (58-0212) 7688300 - 7688399.</br>
+                        </br>
+                        <b>Correos electrónicos:</b>  atencionalescritor@fepr.gob.ve</br>
+						editorialelperroylarana@fepr.gob.ve</br>
+                        </br>
+                        <b>Páginas web:</b> <a href="http://www.elperroylarana.gob.ve" target="_blank">http://www.elperroylarana.gob.ve</a></br>
+						<a href="http://www.mincultura.gob.ve/" target="_blank">http://www.mincultura.gob.ve/</a></br>
+                        </br>
+                        <b>Creditos del libro digital interactivo</b></br>
+                        <b>Edición de libro digital:</b> Elis Labrador</br>
+                        <b>Animación y desarrollo:</b> César Mosquera</br>
+                        <b>Voz:</b> Gabriel Saldivia</br>
+                        <b>Agradecimientos a:</b> Alba Ciudad 96.3 FM</br>
+                        </br>
+                        <b>Creditos del libro impreso</b></br>
+                        <b>Diseño de colección:</b> Mónica Piscitelli</br>
+						<b>Tratamiento de las imagenes de Gustavo Doré:</b>  David Dávila</br>
+						<b>Edición al cuidado de:</b> Katherine Castrillo y	David Dávila</br>
+                        </br>
+                        ISBN: 978-980-14-2869-5</br>
+                        lfi: 40220148002311
+                        </p>
+                    </div>
+                </div>
+	        </div>
+            <div>
+
+	        </div>
+            <div>
+				<div class="foto">
+	           		<img src="images/guarda.png" alt=""/>
+                </div>
+	        </div>
+            <div title="Contraportada">
+	            <div class="embed-container">
+					<iframe src="contraportada.html" frameBorder="0"></iframe>
+                </div>
+	        </div>
+
+
+	    </div>
+
+
+	</div>
+</article>
+   <div class="md-modal md-effect-8" id="modal-1">
+			<div class="md-content">
+				<h3 class="responsive-text">Edgar Allan Poe</h3>
+				<div>
+                     <p class="responsive-text">Edgar Allan Poe era hijo de Elizabeth Arlold Poe y David Poe, actores ambulantes de teatro, quienes lo dejaron huérfano a los dos años. Fue educado por John Allan, un acaudalado hombre de negocios de Richmond, y de 1815 a 1820 vivió con éste y su esposa en el Reino Unido, donde comenzó su educación.<br/>
+Los Allan acogieron al niño, pero nunca lo adoptaron formalmente aunque le dieron el nombre de "Edgar Allan Poe".<br/>
+La miseria y el hambre lo acompañaron, por motivos económicos pronto dirigió sus esfuerzos a la prosa, escribiendo relatos y crítica literaria para algunos periódicos de la época; llegó a adquirir cierta notoriedad por su estilo cáustico y elegante. Debido a su trabajo, vivió en varias ciudades: Baltimore, Filadelfia y Nueva York. En Baltimore, en 1835, contrajo matrimonio con su prima Virginia Clemm, que contaba a la sazón 13 años de edad. En enero de 1845, publicó un poema que le haría célebre: "El cuervo". Su mujer murió de tuberculosis dos años más tarde. Aún hundido en la desolación, el autor terminó, en 1849, el poema "Eureka". Con la muerte de Virginia, la vida de Poe se vino abajo.<br/>
+Falleció el 7 de octubre de 1849. Sus últimas palabras fueron "que dios ayude a mi pobre alma".</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-2" id="modal-2">
+			<div class="md-content">
+				<h3 class="responsive-text">Gustav Doré</h3>
+				<div>
+					<p class="responsive-text">Nació en Francia 1832 y murió en esa mismo país en 1883. Niño prodigio que en poco tiempo se convirtió en una referencia de la ilustración, participando en grandes proyectos editoriales no solo en su país sino en Inglaterra. De los libros ilustrados podemos mencionar: Don Quijote de la Mancha, Orlando Furioso, La Biblia, La Divina Comedia, entre otros. Ilustraciones que despiertan en el lector o lectora una sensación de acompañamiento fantasmal, real o extravagante.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-3" id="modal-3">
+			<div class="md-content">
+				<h3 class="responsive-text">Juan Antonio Pérez Bolande</h3>
+				<div>
+					<p class="responsive-text">Nació en Caracas en 1846 y murió en la Guaira en 1892. Luego de Andrés Bello es uno de los poetas fundamentales del siglo XIX. Tuvo una vida corta, solo vivió 46 años de los cuales la gran parte de ese tiempo fue en el exilio. En Nueva York conocerá la obra de los románticos norteamericanos y completará su libro de versos reunidos bajo el título de Estrofas. En ese mismo país conoce a José Martí quién prologa el poema “Niágara”. Pérez Bonalde es quizás el mejor traductor de El cuervo, de Edgar Allan Poe, porque logra transmitir la sonoridad, cadencia, ritmo y la atmósfera angustiante que habita en en los versos de este extenso poema. El resultado es previsible, hermanados en el sentimiento literario, llamado romanticismo, Pérez Bonalde y Edgar Allan Poe pueden convivir en las desgracias que la existencia les agenció y la solidaridad que encontraron en la escritura.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+		<div class="md-modal md-effect-7" id="modal-4">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Fosca:</b> Oscura</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-5">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Cronicones:</b> Breve narración histórica ordenada cronológicamente.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-6">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Pavuras:</b> Pavor.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-7">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Trocó:</b> Transformó una cosa en otra diferente.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-8">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Torva:</b> Fiero, espantoso. </p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-9">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Plutoniano:</b> Referencia a el dios romano del inframundo, Plutón.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-10">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Cornisa:</b> Conjunto de molduras que forman el remate superior de un edificio, habitación, pedestal, mueble, entre otros. </p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+         <div class="md-modal md-effect-7" id="modal-11">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Ritornelo:</b> Repetición,estribillo.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-12">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Ominoso:</b> Abominable, despreciable. </p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-13">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Hosco:</b> Desagradable, poco acogedor.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-14">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Fanal:</b> Farol grande que se coloca en las torres de los puertos para que su luz sirva de señal nocturna.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-15">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Incensario:</b> Son recipientes para quemar incienso que se utiliza en determinadas celebraciones religiosas.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-16">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Nepente:</b> Bebida que los dioses empleaban para curarse las heridas o aliviar el dolor y que además producía amnesia.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-17">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Ábrego:</b> Viento húmedo del suroeste.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+        <div class="md-modal md-effect-7" id="modal-18">
+			<div class="md-content">
+				<h3 class="responsive-text">Glosario</h3>
+				<div>
+					<p class="responsive-text"><b>Combo:</b> Encorvado.</p>
+					<a href="javascript:;" class="md-close"><span class="fa fa-times"></a>
+				</div>
+			</div>
+		</div>
+
+<div class="md-overlay"></div><!-- the overlay element -->
+
+	<script src="js/audio.js" type="text/javascript"></script>
+            <script src="js/modalEffects.js"></script>
+            <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+		<script src="js/classie.js"></script>
+
+
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="js/cssParser.js"></script>
+		<script src="js/css-filters-polyfill.js"></script>
+</body>
+</html>
